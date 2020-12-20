@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Favorites from "./Favorites";
+import Controls from "./Controls";
 // import Controls from "./Controls";
 //refractor the code so that it will be easier to manage routing
 // remove the Favorites componet from the seacrh and add it in the app.js component and the controller should be in the search component when clicked on an audio we will pass the id of the sont to the controller fetch it adn play the audio ez
@@ -47,6 +47,7 @@ function Search() {
     <div>
       <br />
       <input type="search" onKeyPress={handleEnter} />
+
       {music &&
         music.data.map((music) => {
           const { album, id, title } = music;

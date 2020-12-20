@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../styles/fav_style.css";
+import Controls from "./Controls";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 function Favorites() {
   const [music, setMusic] = useState([]);
 
@@ -9,16 +11,21 @@ function Favorites() {
 
   return (
     <div className="l">
-      {music &&
-        music.map((items) => {
-          const { id, title, cover_medium } = items;
-          return (
-            <>
-              <h3>{title}</h3>
-              <img src={cover_medium} alt={title} />
-            </>
-          );
-        })}
+      <Route>
+        {music &&
+          music.map((items) => {
+            const { id, title, cover_medium } = items;
+
+            return (
+              <div key={id}>
+                <Link to={`/fav/${id}`}>
+                  <h3>{title}</h3>
+                  <img src={cover_medium} alt={title} />
+                </Link>
+              </div>
+            );
+          })}
+      </Route>
     </div>
   );
 }
