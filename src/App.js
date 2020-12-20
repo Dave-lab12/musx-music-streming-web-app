@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Search from "./components/Search";
+import Favorites from "./components/Favorites";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
-  const url =
-    "https://cors-anywhere.herokuapp.com/https://api.deezer.com/user/2529/flow";
-  const [music, setMusic] = useState([]);
-  const fetchData = async () => {
-    const get = await fetch(url);
-    const data = await get.json();
-    setMusic(data);
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const mu = music.data;
   return (
     <div className="App">
-      <Search />
+      <Router>
+        <Link to="/fav">Favorite</Link>
+        <br />
+        <Link to="/search">Search</Link>
+        <Route exact path="/fav" component={Favorites}></Route>
+        <Route exact path="/search" component={Search}></Route>
+      </Router>
     </div>
   );
 }
