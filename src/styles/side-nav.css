@@ -1,0 +1,31 @@
+
+.side-items{
+    height: 100%;
+    background-color:#457B9D ;
+    width: 22%;
+    border-radius: 30px 0 0 30px;
+}
+.logo{
+    font-family: sans-serif;
+    position: relative;
+    text-align: center;
+    top: 20px;
+    color: #A8DADC;
+}
+.mu{
+    color: #1D3557;
+}
+.items-container{
+    outline: 1px solid red;
+    height: 100%;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.items-container a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #A8DADC;
+}
