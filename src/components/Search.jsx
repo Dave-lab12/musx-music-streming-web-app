@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
+import { AiFillHeart } from "react-icons/ai";
+import { FaPlay } from "react-icons/fa";
+import { AiFillCloseCircle } from "react-icons/ai";
 import Controls from "./Controls";
-// import { FcSearch } from "react-icons/fc";
-// import Controls from "./Controls";
-//refractor the code so that it will be easier to manage routing
-// remove the Favorites componet from the seacrh and add it in the app.js component and the controller should be in the search component when clicked on an audio we will pass the id of the sont to the controller fetch it adn play the audio ez
-
-//add to fav saves name id and picture to local storage
-//fav component get that data and display it
-//the controls button will fetch the rewuired music using routing and passing in the id
-//oerfect and then will be done with the functionality and move on to the css
-
+import Loader from "./Loader";
 function Search() {
   const [find, setFind] = useState("");
   const [music, setMusic] = useState(null);
-  const [favorite, setFavorite] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const [favorite, setFavorite] = useState(
+    JSON.parse(localStorage.getItem("fav"))
+  );
+  const [play, setPlay] = useState(false);
   const fetchData = async () => {
     try {
       const get = await fetch(
@@ -24,12 +23,14 @@ function Search() {
 
       if (!dta.error) {
         setMusic(dta);
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
     }
   };
   localStorage.setItem("fav", JSON.stringify(favorite));
+
   useEffect(() => {
     fetchData();
   }, [find]);
@@ -39,14 +40,17 @@ function Search() {
   };
   const handleEnter = (e) => {
     if (e.key === "Enter") {
+      setLoading(true);
       handleChange(e);
     }
   };
+  let x;
+  if (loading) {
+    return <Loader />;
+  }
 
-  console.log(favorite);
   return (
-    <div className="body-container">
-      {/* <FcSearch /> */}
+    <div className="body-container sc2">
       <div className="input-group">
         <input
           onKeyPress={handleEnter}
@@ -54,30 +58,57 @@ function Search() {
           type="text"
           placeholder="Searching for something?"
         />
-        <span className="bar"></span>
+        <BiSearchAlt className="iconn" />
       </div>
-      <section className="items-container">
+      <section className="container2 ">
         {music &&
           music.data.map((music) => {
             const { album, id, title } = music;
-            const { cover_medium } = album;
+            x = id;
+            const { cover_big } = album;
             return (
-              <div className="items">
-                <img className="search-image" src={cover_medium} alt={title} />
-                <h2 className="search-title">{title}</h2>
-                <button
-                  className="Favorites"
-                  value={id}
-                  onClick={() =>
-                    setFavorite([...favorite, { id, title, cover_medium }])
-                  }
-                >
-                  Add to favorite
-                </button>
+              <div key={id} className="card ">
+                <div className="imgbx">
+                  <img src={cover_big} alt={title} />
+                </div>
+                <div className="content">
+                  <div className="contentBx">
+                    <h3>{title}</h3>
+                  </div>
+
+                  <ul className="sci">
+                    <li>
+                      <button
+                        value={id}
+                        onClick={() =>
+                          favorite
+                            ? setFavorite([
+                                ...favorite,
+                                { id, title, cover_big },
+                              ])
+                            : setFavorite([{ id, title, cover_big }])
+                        }
+                      >
+                        <AiFillHeart />
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={() => setPlay(true)}>
+                        {play ? "" : <FaPlay />}
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={() => setPlay(false)}>
+                        <AiFillCloseCircle />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             );
           })}
       </section>
+      {play ? <Controls id={x} /> : ""}
     </div>
   );
 }
