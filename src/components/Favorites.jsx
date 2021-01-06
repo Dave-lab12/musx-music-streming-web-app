@@ -8,8 +8,7 @@ function Favorites() {
   useEffect(() => {
     setMusic(JSON.parse(localStorage.getItem("fav")));
   }, []);
-  let x;
-
+  const [choice, setChoice] = useState(null);
   return (
     <>
       <div className="body-container sc2">
@@ -17,8 +16,8 @@ function Favorites() {
           {music &&
             music.map((items) => {
               let { id, title, cover_big } = items;
-              x = id;
-              controler && <Controls id={x} />;
+
+              // controler && <Controls id={x} />;
               return (
                 <div key={id} className="card">
                   <div className="imgbx">
@@ -29,9 +28,9 @@ function Favorites() {
                       <h3>{title}</h3>
                     </div>
                     <ul className="sci">
-                      <li>
-                        <button onClick={() => setController(true)}>
-                          {controler ? "" : <FaPlay />}
+                      <li onClick={() => setController(true)}>
+                        <button onClick={() => setChoice(id)}>
+                          {Controls ? <FaPlay /> : ""}
                         </button>
                       </li>
                       <li>
@@ -44,8 +43,10 @@ function Favorites() {
                 </div>
               );
             })}
+          {controler && <Controls id={choice} />}
         </section>
       </div>
+
       {/* {controler ? <Controls id={x} /> : ""} */}
     </>
   );

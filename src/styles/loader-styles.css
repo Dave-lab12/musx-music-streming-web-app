@@ -97,6 +97,8 @@
 
 .fadeIn, .loading-window {
   animation: fadeIn 0.4s both;
+  overflow: hidden;
+
 }
 
 .loading-window {
@@ -112,6 +114,8 @@
   top: 50%;
   width: 300px;
   z-index: 99;
+  overflow: hidden;
+
 }
 .loading-window .text {
   font-size: 20px;
@@ -120,6 +124,8 @@
   top: 75%;
   left: 38%;
   margin: 0 auto;
+  overflow: hidden;
+
 }
 .loading-window .dots {
   display: inline-block;
@@ -128,6 +134,8 @@
   vertical-align: bottom;
   animation: dots 1.5s linear infinite;
   transition: 1;
+  overflow: hidden;
+
 }
 
 .car {
@@ -136,6 +144,8 @@
   height: 42px;
   left: 92px;
   top: 70px;
+  overflow: hidden;
+
 }
 .car .strike {
   position: absolute;
@@ -143,6 +153,8 @@
   height: 1px;
   background: #ffe4e1;
   animation: strikes 0.2s linear infinite;
+  overflow: hidden;
+
 }
 .car .strike2 {
   top: 11px;

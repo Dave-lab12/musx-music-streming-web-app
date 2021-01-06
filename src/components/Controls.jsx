@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 function Controls({ id }) {
   const idd = id;
   const [player, setPlayer] = useState(null);
-  const [close, setClose] = useState(true);
+
   const getData = async (id) => {
     const data = await fetch(
       `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`

@@ -9,6 +9,7 @@ function Search() {
   const [find, setFind] = useState("");
   const [music, setMusic] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [choice, setChoice] = useState(null);
 
   const [favorite, setFavorite] = useState(
     JSON.parse(localStorage.getItem("fav"))
@@ -93,7 +94,7 @@ function Search() {
                       </button>
                     </li>
                     <li>
-                      <button onClick={() => setPlay(true)}>
+                      <button onClick={() => setChoice(id)}>
                         {play ? "" : <FaPlay />}
                       </button>
                     </li>
@@ -108,7 +109,7 @@ function Search() {
             );
           })}
       </section>
-      {play ? <Controls id={x} /> : ""}
+      {play ? <Controls id={choice} /> : ""}
     </div>
   );
 }

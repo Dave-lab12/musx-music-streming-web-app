@@ -5,6 +5,8 @@ import Controls from "./Controls";
 import { AiFillCloseCircle } from "react-icons/ai";
 function TopMusic({ music }) {
   const [play, setPlay] = useState(false);
+  const [choice, setChoice] = useState(null);
+
   const [favorite, setFavorite] = useState(
     JSON.parse(localStorage.getItem("fav"))
   );
@@ -38,8 +40,8 @@ function TopMusic({ music }) {
                       <AiFillHeart />
                     </button>
                   </li>
-                  <li>
-                    <button onClick={() => setPlay(true)}>
+                  <li onClick={() => setPlay(!play)}>
+                    <button onClick={() => setChoice(id)}>
                       {play ? <AiFillCloseCircle /> : <FaPlay />}
                     </button>
                   </li>
@@ -48,7 +50,7 @@ function TopMusic({ music }) {
             </div>
           );
         })}
-      {play ? <Controls id={x} /> : ""}
+      {play && <Controls id={choice} />}
     </section>
   );
 }
