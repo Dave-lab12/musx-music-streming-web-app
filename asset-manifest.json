@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/musx-music-streming-web-app/static/css/main.74e5174b.chunk.css",
+    "main.js": "/musx-music-streming-web-app/static/js/main.34eaef5a.chunk.js",
+    "main.js.map": "/musx-music-streming-web-app/static/js/main.34eaef5a.chunk.js.map",
+    "runtime-main.js": "/musx-music-streming-web-app/static/js/runtime-main.3a6315ce.js",
+    "runtime-main.js.map": "/musx-music-streming-web-app/static/js/runtime-main.3a6315ce.js.map",
+    "static/js/2.2d2a7ed0.chunk.js": "/musx-music-streming-web-app/static/js/2.2d2a7ed0.chunk.js",
+    "static/js/2.2d2a7ed0.chunk.js.map": "/musx-music-streming-web-app/static/js/2.2d2a7ed0.chunk.js.map",
+    "index.html": "/musx-music-streming-web-app/index.html",
+    "static/css/main.74e5174b.chunk.css.map": "/musx-music-streming-web-app/static/css/main.74e5174b.chunk.css.map",
+    "static/js/2.2d2a7ed0.chunk.js.LICENSE.txt": "/musx-music-streming-web-app/static/js/2.2d2a7ed0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a6315ce.js",
+    "static/js/2.2d2a7ed0.chunk.js",
+    "static/css/main.74e5174b.chunk.css",
+    "static/js/main.34eaef5a.chunk.js"
+  ]
+}
