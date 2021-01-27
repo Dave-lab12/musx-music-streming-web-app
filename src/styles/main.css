@@ -4,13 +4,19 @@
     box-sizing: border-box;
      overflow-x: hidden;
      text-decoration: none;
-
+outline: none;
 }
 body{
-    /* background:linear-gradient(90deg,#6A00F4,#F20089) */
-  background-image: url('https://cdn.pixabay.com/photo/2017/11/24/10/43/radio-2974649_960_720.jpg');
-  background-size: cover;
-  /* background-color: rgba(212, 212, 212, 0.5); */
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  font-family: "Poppins", sans-serif;
+
+}
+h1{
+  color: #426696;
+}
+.container{
+   background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
 }
 @media only screen and (min-width: 600px) {
 .container{
@@ -31,7 +37,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px);
     width: 22%;
     border-radius: 15px 0 0 15px;
@@ -47,7 +53,8 @@ body{
     top: -50px;
     text-decoration: none;
     font-family: sans-serif;
-    color: #A8DADC;
+     color: #426696;
+
 
 }
 
@@ -57,7 +64,8 @@ body{
     text-align: center;
     top: -50px;
     font-size: 1.8rem;
-    color: #A8DADC;
+      color: #426696;
+
 }
 .mu{
     color: #1D3557;
@@ -66,7 +74,7 @@ body{
 }
 @media only screen and (max-width: 600px) {
 .burger{
-  color: #A8DADC;
+    color: #426696;
   margin: 10px;
   padding: -25px;
 }
@@ -82,7 +90,8 @@ body{
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   align-items: center;
-  color: #A8DADC;
+    color: #426696;
+
   height: 180px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -93,7 +102,8 @@ body{
 .side-nav a{
   overflow: hidden;
   padding: 10px;
-  color: #A8DADC;
+    color: #426696;
+
 }
 .side-nav a:hover{
   background-color: #11171a;
@@ -104,7 +114,8 @@ body{
      width: 100%;
 }
 .home-title{
-    color: #A8DADC;
+      color: #426696;
+
 
 }
 /* ************************************************* */
@@ -265,6 +276,22 @@ body{
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: bottom 0.5s;
 }
+.header h1{
+ 
+  display: inline;
+}
+.clear_icon{
+  position: relative;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+   color: #426696;
+  float:right;
+  transition: all 0.3s ease-in-out;
+}
+.clear_icon:hover{
+  color: red; 
+}
 .container2 .card:hover .content{
   bottom: 0px;
   
@@ -355,4 +382,15 @@ display: flex;
 }
 .black{
   background-color: black;
+}
+.circle1 {
+  top: 5%;
+  right: 15%;
+  z-index: -1;
+}
+.circle2 {
+  bottom: 5%;
+  left: 10%;
+  z-index: -1;
+
 }

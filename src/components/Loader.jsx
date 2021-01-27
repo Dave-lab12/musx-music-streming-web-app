@@ -2,26 +2,34 @@ import React from "react";
 import "../styles/loader-styles.css";
 function Loader() {
   return (
-    <div className="loading-window">
-      <div className="car">
-        <div className="strike"></div>
-        <div className="strike strike2"></div>
-        <div className="strike strike3"></div>
-        <div className="strike strike4"></div>
-        <div className="strike strike5"></div>
-        <div className="car-detail spoiler"></div>
-        <div className="car-detail back"></div>
-        <div className="car-detail center"></div>
-        <div className="car-detail center1"></div>
-        <div className="car-detail front"></div>
-        <div className="car-detail wheel"></div>
-        <div className="car-detail wheel wheel2"></div>
+    <div className="loader-container">
+      <div className="blobs">
+        <div className="blob-center"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
       </div>
-
-      <div className="text">
-        <span>Loading</span>
-        <span className="dots">...</span>
-      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
     </div>
   );
 }

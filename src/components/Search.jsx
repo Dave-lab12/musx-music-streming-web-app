@@ -9,6 +9,7 @@ function Search() {
   const [find, setFind] = useState("");
   const [music, setMusic] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [choice, setChoice] = useState(null);
 
   const [favorite, setFavorite] = useState(
@@ -21,7 +22,11 @@ function Search() {
         `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${find}`
       );
       const dta = await get.json();
-
+      console.log(dta);
+      if (dta.total === 0) {
+        setLoading(false);
+        setError(true);
+      }
       if (!dta.error) {
         setMusic(dta);
         setLoading(false);
@@ -45,13 +50,29 @@ function Search() {
       handleChange(e);
     }
   };
-  let x;
+
   if (loading) {
     return <Loader />;
   }
-
+  if (error) {
+    return (
+      <>
+        <h1>No music found</h1>
+        <div className="input-group">
+          <input
+            onKeyPress={handleEnter}
+            className="search"
+            type="text"
+            placeholder="Searching for something?"
+          />
+          <BiSearchAlt className="iconn" />
+        </div>
+      </>
+    );
+  }
   return (
     <div className="body-container sc2">
+      <h1>Search</h1>
       <div className="input-group">
         <input
           onKeyPress={handleEnter}
@@ -65,7 +86,7 @@ function Search() {
         {music &&
           music.data.map((music) => {
             const { album, id, title } = music;
-            x = id;
+
             const { cover_big } = album;
             return (
               <div key={id} className="card ">
@@ -93,14 +114,14 @@ function Search() {
                         <AiFillHeart />
                       </button>
                     </li>
-                    <li>
+                    <li onClick={() => setPlay(true)}>
                       <button onClick={() => setChoice(id)}>
                         {play ? "" : <FaPlay />}
                       </button>
                     </li>
                     <li>
                       <button onClick={() => setPlay(false)}>
-                        <AiFillCloseCircle />
+                        {play ? <AiFillCloseCircle /> : ""}
                       </button>
                     </li>
                   </ul>

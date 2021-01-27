@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Controls from "./Controls";
 import { FaPlay } from "react-icons/fa";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillDelete } from "react-icons/ai";
 function Favorites() {
   const [music, setMusic] = useState([]);
   const [controler, setController] = useState(false);
@@ -9,15 +9,22 @@ function Favorites() {
     setMusic(JSON.parse(localStorage.getItem("fav")));
   }, []);
   const [choice, setChoice] = useState(null);
+  const handleRemove = () => {
+    window.localStorage.removeItem("fav");
+    window.location.reload();
+  };
+  console.log(controler);
   return (
     <>
       <div className="body-container sc2">
+        <div className="header">
+          <h1>Favorites</h1>
+          <AiFillDelete className="clear_icon" onClick={() => handleRemove()} />
+        </div>
         <section className="container2">
           {music &&
             music.map((items) => {
               let { id, title, cover_big } = items;
-
-              // controler && <Controls id={x} />;
               return (
                 <div key={id} className="card">
                   <div className="imgbx">
@@ -30,12 +37,12 @@ function Favorites() {
                     <ul className="sci">
                       <li onClick={() => setController(true)}>
                         <button onClick={() => setChoice(id)}>
-                          {Controls ? <FaPlay /> : ""}
+                          {controler ? "" : <FaPlay />}
                         </button>
                       </li>
                       <li>
                         <button onClick={() => setController(false)}>
-                          <AiFillCloseCircle />
+                          {controler ? <AiFillCloseCircle /> : ""}
                         </button>
                       </li>
                     </ul>
