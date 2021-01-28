@@ -24,6 +24,7 @@ function Home() {
         setMusic(dta);
         setLoading(false);
       }
+      console.log(dta);
     } catch (error) {
       console.log(error);
       setError(true);

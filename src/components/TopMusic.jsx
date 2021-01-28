@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import Controls from "./Controls";
-import { AiFillCloseCircle } from "react-icons/ai";
+
 function TopMusic({ music }) {
   const [play, setPlay] = useState(false);
   const [choice, setChoice] = useState(null);
@@ -10,14 +10,15 @@ function TopMusic({ music }) {
   const [favorite, setFavorite] = useState(
     JSON.parse(localStorage.getItem("fav"))
   );
-  let x = null;
+  localStorage.setItem("fav", JSON.stringify(favorite));
+
   return (
     <section className="container2 ">
       {music &&
         music.tracks.data.map((music) => {
           const { album, id, title } = music;
           const { cover_medium } = album;
-          x = id;
+
           return (
             <div key={id} className="card ">
               <div className="imgbx">
