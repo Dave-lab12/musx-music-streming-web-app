@@ -18,6 +18,7 @@ h1{
    background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(50px);
 }
+
 @media only screen and (min-width: 600px) {
 .container{
   overflow: hidden;
@@ -42,7 +43,7 @@ h1{
     width: 22%;
     border-radius: 15px 0 0 15px;
     visibility: visible;
-
+    max-width: 1551px;
 }
 .side-nav a{
     display: flex;
@@ -53,8 +54,8 @@ h1{
     top: -50px;
     text-decoration: none;
     font-family: sans-serif;
-     color: #426696;
-
+    color: #426696;
+  font-size: 1.3rem;
 
 }
 
@@ -63,7 +64,7 @@ h1{
     position: relative;
     text-align: center;
     top: -50px;
-    font-size: 1.8rem;
+    font-size: 3.3rem;
       color: #426696;
 
 }
@@ -90,20 +91,18 @@ h1{
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   align-items: center;
-    color: #426696;
-
+  color: #426696;
   height: 180px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .logo{
   overflow: hidden;
-
 }
+
 .side-nav a{
   overflow: hidden;
   padding: 10px;
     color: #426696;
-
 }
 .side-nav a:hover{
   background-color: #11171a;
@@ -115,8 +114,40 @@ h1{
 }
 .home-title{
       color: #426696;
+      padding: 1.3rem;
+}
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
 
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, #426696, transparent);
+}
 
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid#426696;
+	border-right: 1px solid#426696;
 }
 /* ************************************************* */
 .wrapper {
@@ -223,6 +254,48 @@ h1{
   /* position: absolute; */
   font-size: 20px;
 }
+.fav-title{
+   color: #426696;
+    padding: 1.3rem;   
+}
+.search-title{
+  color: #426696;
+    padding: 1.3rem; 
+}
+
+
+.container8 {
+  width: 100%;
+  text-align: center;
+}
+
+input[type=text] {
+  position: relative;
+  padding: 15px 40px 15px 20px;
+  width: 20px;
+  color: #525252;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #FFFFFF 0%, #464747 #F9F9F9 100%);
+  transition: width 0.4s ease;
+  outline: none;
+}
+input[type=text]:focus {
+  width: 300px;
+}
+
+.ico {
+  position: relative;
+  left: -37px;
+  top: 6px;
+  color: #426696;
+  font-size: 1.5em;
+  
+}
 /* ************************************************* */
 
 
@@ -250,8 +323,8 @@ h1{
 }
 .container2 .card{
   position: relative;
-  height: 400px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   margin: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -276,13 +349,10 @@ h1{
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: bottom 0.5s;
 }
-.header h1{
- 
-  display: inline;
-}
+
 .clear_icon{
   position: relative;
-  top: 10px;
+  top: -50px;
   right: 10px;
   font-size: 25px;
    color: #426696;
@@ -294,8 +364,6 @@ h1{
 }
 .container2 .card:hover .content{
   bottom: 0px;
-  
-
 }
 .content{
   display: flex;
@@ -353,7 +421,7 @@ h1{
   position: relative;
    outline: none;
   border: none;
-  
+  z-index: 500;
 }
 .player{
   outline: none;

@@ -18,17 +18,21 @@ function Favorites() {
     <>
       <div className="body-container sc2">
         <div className="header">
-          <h1>Favorites</h1>
+          <h1 className="fav-title">Favorites</h1>
           <AiFillDelete className="clear_icon" onClick={() => handleRemove()} />
         </div>
         <section className="container2">
           {music &&
             music.map((items) => {
-              let { id, title, cover_big } = items;
+              let { id, title, cover_medium } = items;
               return (
                 <div key={id} className="card">
                   <div className="imgbx">
-                    <img className="search-image" src={cover_big} alt={title} />
+                    <img
+                      className="search-image"
+                      src={cover_medium}
+                      alt={title}
+                    />
                   </div>
                   <div className="content">
                     <div className="contentBx">
@@ -37,12 +41,7 @@ function Favorites() {
                     <ul className="sci">
                       <li onClick={() => setController(true)}>
                         <button onClick={() => setChoice(id)}>
-                          {controler ? "" : <FaPlay />}
-                        </button>
-                      </li>
-                      <li>
-                        <button onClick={() => setController(false)}>
-                          {controler ? <AiFillCloseCircle /> : ""}
+                          <FaPlay />
                         </button>
                       </li>
                     </ul>

@@ -72,26 +72,27 @@ function Search() {
   }
   return (
     <div className="body-container sc2">
-      <h1>Search</h1>
-      <div className="input-group">
+      <h1 className="search-title">Search</h1>
+      <div class="container8">
         <input
-          onKeyPress={handleEnter}
-          className="search"
+          placeholder="Search..."
+          class="js-search"
           type="text"
-          placeholder="Searching for something?"
+          onKeyPress={handleEnter}
         />
-        <BiSearchAlt className="iconn" />
+        <BiSearchAlt className="ico" />
       </div>
+
       <section className="container2 ">
         {music &&
           music.data.map((music) => {
             const { album, id, title } = music;
 
-            const { cover_big } = album;
+            const { cover_medium } = album;
             return (
               <div key={id} className="card ">
                 <div className="imgbx">
-                  <img src={cover_big} alt={title} />
+                  <img src={cover_medium} alt={title} />
                 </div>
                 <div className="content">
                   <div className="contentBx">
@@ -106,9 +107,9 @@ function Search() {
                           favorite
                             ? setFavorite([
                                 ...favorite,
-                                { id, title, cover_big },
+                                { id, title, cover_medium },
                               ])
-                            : setFavorite([{ id, title, cover_big }])
+                            : setFavorite([{ id, title, cover_medium }])
                         }
                       >
                         <AiFillHeart />
@@ -116,12 +117,7 @@ function Search() {
                     </li>
                     <li onClick={() => setPlay(true)}>
                       <button onClick={() => setChoice(id)}>
-                        {play ? "" : <FaPlay />}
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => setPlay(false)}>
-                        {play ? <AiFillCloseCircle /> : ""}
+                        <FaPlay />
                       </button>
                     </li>
                   </ul>

@@ -16,12 +16,12 @@ function TopMusic({ music }) {
       {music &&
         music.tracks.data.map((music) => {
           const { album, id, title } = music;
-          const { cover_big } = album;
+          const { cover_medium } = album;
           x = id;
           return (
             <div key={id} className="card ">
               <div className="imgbx">
-                <img src={cover_big} alt={title} />
+                <img src={cover_medium} alt={title} />
               </div>
               <div className="content">
                 <div className="contentBx">
@@ -33,16 +33,19 @@ function TopMusic({ music }) {
                       value={id}
                       onClick={() =>
                         favorite
-                          ? setFavorite([...favorite, { id, title, cover_big }])
-                          : setFavorite([{ id, title, cover_big }])
+                          ? setFavorite([
+                              ...favorite,
+                              { id, title, cover_medium },
+                            ])
+                          : setFavorite([{ id, title, cover_medium }])
                       }
                     >
                       <AiFillHeart />
                     </button>
                   </li>
-                  <li onClick={() => setPlay(!play)}>
+                  <li onClick={() => setPlay(true)}>
                     <button onClick={() => setChoice(id)}>
-                      {play ? <AiFillCloseCircle /> : <FaPlay />}
+                      <FaPlay />
                     </button>
                   </li>
                 </ul>

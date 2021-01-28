@@ -46,7 +46,8 @@ function Home() {
     <div className="body-container sc2">
       <h1 className="home-title">Top Tracks</h1>
       <TopMusic music={music} />
-      <h1 className="home-title">Top Artist</h1>
+      <div class="divider div-transparent"></div>
+      <h1 className="home-title artist">Top Artist</h1>
       <TopAlbum music={music} />
     </div>
   );
