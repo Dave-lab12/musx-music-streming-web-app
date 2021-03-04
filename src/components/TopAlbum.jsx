@@ -34,7 +34,7 @@ function TopAlbum({ music }) {
                           : setFavorite([{ id, name, picture_big }])
                       }
                     >
-                      <AiFillHeart onClick={console.log("added")} />
+                      <AiFillHeart  />
                     </button>
                   </li>
                   <li>

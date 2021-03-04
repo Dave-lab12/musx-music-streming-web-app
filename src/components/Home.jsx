@@ -15,14 +15,15 @@ function Home() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const get = await fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart`);
+      const get = await fetch(`https://cross-pass.herokuapp.com/https://api.deezer.com/chart`);
+      
       const dta = await get.json();
        
       if (!dta.error) {
         setMusic(dta);
         setLoading(false);
       }
-      console.log(dta);
+     
     } catch (error) {
       setError(true);
       console.log(error);
@@ -45,7 +46,7 @@ function Home() {
     <div className="body-container sc2">
       <h1 className="home-title">Top Tracks</h1>
       <TopMusic music={music} />
-      <div class="divider div-transparent"></div>
+      <div className="divider div-transparent"></div>
       <h1 className="home-title artist">Top Artist</h1>
       <TopAlbum music={music} />
     </div>
