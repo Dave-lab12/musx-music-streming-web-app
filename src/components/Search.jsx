@@ -19,7 +19,7 @@ function Search() {
   const fetchData = async () => {
     try {
       const get = await fetch(
-        `/search?q=${find}`
+        `https://thingproxy.freeboard.io/fetch/https://api.deezer.com//search?q=${find}`
       );
       const dta = await get.json();
       console.log(dta);

@@ -2,7 +2,7 @@
   "name": "player",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://api.deezer.com",
+ 
   "homepage": "https://Dave-lab12.github.io/musx-music-streming-web-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

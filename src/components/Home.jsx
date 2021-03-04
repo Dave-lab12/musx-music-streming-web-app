@@ -15,7 +15,7 @@ function Home() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const get = await fetch(`/chart`);
+      const get = await fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart`);
       const dta = await get.json();
        
       if (!dta.error) {

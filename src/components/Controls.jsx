@@ -6,7 +6,7 @@ function Controls({ id }) {
 
   const getData = async (id) => {
     const data = await fetch(
-      `/track/${id}`
+      `https://thingproxy.freeboard.io/fetch/https://api.deezer.com//track/${id}`
     );
     const result = await data.json();
     setPlayer(result);
