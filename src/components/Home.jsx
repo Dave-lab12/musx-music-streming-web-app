@@ -15,19 +15,17 @@ function Home() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const get = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`
-      );
+      const get = await fetch(`/chart`);
       const dta = await get.json();
-
+       
       if (!dta.error) {
         setMusic(dta);
         setLoading(false);
       }
       console.log(dta);
     } catch (error) {
-      console.log(error);
       setError(true);
+      console.log(error);
     }
   };
 
@@ -40,7 +38,7 @@ function Home() {
   }
   if (error) {
     return (
-      <h1>sorry we've encountered some errors sorry for the inconvinence</h1>
+      <h1>sorry we've encountered some errors sorry for the inconvenience</h1>
     );
   }
   return (

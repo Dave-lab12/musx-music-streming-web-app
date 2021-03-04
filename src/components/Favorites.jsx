@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Controls from "./Controls";
 import { FaPlay } from "react-icons/fa";
-import { AiFillCloseCircle, AiFillDelete } from "react-icons/ai";
+import {  AiFillDelete } from "react-icons/ai";
 function Favorites() {
   const [music, setMusic] = useState([]);
   const [controler, setController] = useState(false);
@@ -53,7 +53,7 @@ function Favorites() {
         </section>
       </div>
 
-      {/* {controler ? <Controls id={x} /> : ""} */}
+    
     </>
   );
 }

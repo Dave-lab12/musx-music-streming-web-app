@@ -6,7 +6,7 @@ function Controls({ id }) {
 
   const getData = async (id) => {
     const data = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`
+      `/track/${id}`
     );
     const result = await data.json();
     setPlayer(result);

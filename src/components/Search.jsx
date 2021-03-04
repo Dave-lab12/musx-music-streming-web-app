@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
-import { AiFillCloseCircle } from "react-icons/ai";
+
 import Controls from "./Controls";
 import Loader from "./Loader";
 function Search() {
@@ -19,7 +19,7 @@ function Search() {
   const fetchData = async () => {
     try {
       const get = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${find}`
+        `/search?q=${find}`
       );
       const dta = await get.json();
       console.log(dta);
