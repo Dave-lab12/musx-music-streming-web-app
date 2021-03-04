@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/musx-music-streming-web-app/static/css/main.4c9f522c.chunk.css",
-    "main.js": "/musx-music-streming-web-app/static/js/main.ceed3bb0.chunk.js",
-    "main.js.map": "/musx-music-streming-web-app/static/js/main.ceed3bb0.chunk.js.map",
+    "main.js": "/musx-music-streming-web-app/static/js/main.45fc6ec2.chunk.js",
+    "main.js.map": "/musx-music-streming-web-app/static/js/main.45fc6ec2.chunk.js.map",
     "runtime-main.js": "/musx-music-streming-web-app/static/js/runtime-main.3a6315ce.js",
     "runtime-main.js.map": "/musx-music-streming-web-app/static/js/runtime-main.3a6315ce.js.map",
     "static/js/2.bcfe6b95.chunk.js": "/musx-music-streming-web-app/static/js/2.bcfe6b95.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3a6315ce.js",
     "static/js/2.bcfe6b95.chunk.js",
     "static/css/main.4c9f522c.chunk.css",
-    "static/js/main.ceed3bb0.chunk.js"
+    "static/js/main.45fc6ec2.chunk.js"
   ]
 }
